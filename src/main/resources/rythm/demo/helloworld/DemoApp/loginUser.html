@@ -1,0 +1,54 @@
+@extends(layout, title: "login")
+@args boolean loggedIn
+@if(loggedIn) {
+<h1>
+  Welcome @_session.get("username")
+</h1>
+<p>You will be redirect to home soon...</p>
+<script>
+  setTimeout(function() {
+    location.href = "/"
+  }, 2500);
+</script>
+@return
+}
+<style>
+  form div {margin: 20px;}
+  form .field {
+    display: inline-block;
+    width: 180px;
+    text-align: right;
+    margin-right: 15px;
+  }
+  form .error {
+    color: red;
+  }
+  form fieldset {
+    display: inline-block;
+    width: 500px;
+    margin: 100px auto;
+  }
+</style>
+<form action="/login" method="POST">
+  <fieldset>
+    <legend>Login</legend>
+    @if(_flash.get("error")) {
+    <div class="error">
+      @_flash.get("error")
+    </div>
+    }
+    <div>
+      <span class="field">Username</span>
+      <input name="username">
+    </div>
+    <div>
+      <span class="field">Password</span>
+      <input type="password" name="password">
+    </div>
+    <div>
+      <span class="field">
+      <button>Submit</button>
+      </span>
+    </div>
+  </fieldset>
+</form>

@@ -1,0 +1,10 @@
+@import demo.helloworld.model.*
+@args Iterable<Customer> result
+[
+        @for(Customer c: result) {
+{
+"my_id": "@c.getId()"
+}
+
+        }
+]
