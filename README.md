@@ -42,6 +42,7 @@ This is the application I've presented on [Sydney JVM Meetup](http://www.meetup.
 
 ## Code size
 
+```
 http://cloc.sourceforge.net v 1.60  T=0.03 s (343.1 files/s, 10602.5 lines/s)
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
@@ -51,4 +52,4 @@ HTML                             5              0              0             79
 -------------------------------------------------------------------------------
 SUM:                            10             40             15            254
 -------------------------------------------------------------------------------
-
+```
