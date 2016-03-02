@@ -28,6 +28,11 @@
     width: 500px;
     margin: 100px auto;
   }
+  form .tip {
+    margin-left: 220px;
+    font-style: italic;
+    color: #aaa;
+  }
 </style>
 <form action="/login" method="POST">
   <fieldset>
@@ -43,7 +48,10 @@
     </div>
     <div>
       <span class="field">Password</span>
-      <input type="password" name="password">
+      <input type="password" name="password" title="hint: type in any password contains word 'act'">
+    </div>
+    <div class="tip">
+      Tips: type in any password contains word 'act'
     </div>
     <div>
       <span class="field">

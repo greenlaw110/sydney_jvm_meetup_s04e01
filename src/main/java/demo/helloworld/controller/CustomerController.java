@@ -2,6 +2,7 @@ package demo.helloworld.controller;
 
 
 import act.cli.Command;
+import act.cli.JsonView;
 import act.cli.Required;
 import act.controller.Controller;
 import act.db.morphia.MorphiaDao;
@@ -34,6 +35,7 @@ public class CustomerController {
     }
 
     @Command(name = "cust.show", help = "display customer details")
+    @JsonView
     @GetAction("/{id}")
     public Customer show(
            @Required("specify the customer ID") String id
