@@ -29,13 +29,13 @@ public class CustomerController {
 
     @Command(name = "cust.list", help = "List all customers")
     @GetAction
-    @PropertySpec("-address.suburb")
+    @PropertySpec("-address.suburb") // do not include address.suburb information in the return result
     public Iterable<Customer> list() {
         return customerDao.findAll();
     }
 
     @Command(name = "cust.show", help = "display customer details")
-    @JsonView
+    @JsonView // applied to CLI only, make sure CLI use JSON view to present the data
     @GetAction("/{id}")
     public Customer show(
            @Required("specify the customer ID") String id
